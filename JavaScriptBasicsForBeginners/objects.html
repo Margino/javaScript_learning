@@ -74,7 +74,29 @@
 
     // QUESTION:
     // .call
-    // .applay
+    // .apply
+
+    console.info("%c%s", "font-weight: bold",'\nCall, Apply, Bind');
+    // Call
+    // https://www.youtube.com/watch?v=c0mLRpw-9rI
+
+    const obj = {
+        num: 2
+    };
+    const addToThis = function(a, b, c) {
+
+        return this.num + a + b + c;
+    };
+    const resultOfCall = addToThis.call(obj, 1, 2, 3);
+    console.log('resultOfCall', resultOfCall);
+
+    const arrForApply = [1, 2, 3];
+    const resultOfApply = addToThis.apply(obj, arrForApply);
+    console.log('resultOfApply', resultOfApply);
+
+    const bound = addToThis.bind(obj);
+    const resultOfBind = bound(1, 2, 3)
+    console.log('resultOfBind', resultOfBind);
 
     </script>
 
