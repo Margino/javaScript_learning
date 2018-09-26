@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Variables</title>
+</head>
+<body>
+
+    <script>
+    'use strict'
+
+    const getMaxOfTwoNumber = (a, b) => {
+        return (a > b) ? a : b;
+    };
+
+    const isLandscape = (width, height) => {
+        return (width > height);
+    };
+
+
+    // divisible by 3 => Fizz
+    // divisible by 5 => Buzz
+    // divisible by both 3 and 5 => FizzBuzz
+    // Not a number => 'Not a number'
+
+    const fizzBuzz = (num) => {
+        if (typeof num !== 'number')
+            return 'Not a number';
+
+        if ( (num % 3 === 0) && (num % 5 === 0) )
+            return 'FizzBuzz';
+
+        if ( (num % 3) === 0 )
+            return 'Fizz';
+
+        if ((num % 5) === 0)
+            return 'Buzz';
+
+        return num;
+    };
+
+    // speed limit = 70
+    // 5 => 1 point
+    // Math.floor(1.3)
+    // 12 points -> suspended
+
+    const checkSpeed = (speed) => {
+        const speedLimit = 70;
+        const point = 5;
+
+        if (speed < speedLimit + point) {
+            return 'Ok';
+        } else {
+            const points = Math.floor((speed - speedLimit) / point);
+            if (points >= 12) {
+                return 'License suspended';
+            }
+            return `Points: ${points}`;
+        }
+    };
+
+
+    const showNumbers = (limit) => {
+        for (let i = 0; i <= limit; i++) {
+            if (i % 2 !== 0)
+                console.log(`${i} 'EVEN'`);
+            else
+                console.log(`${i} 'ODD'`);
+        }
+    };
+
+
+    const countTruthy = (array) => {
+        let count = 0
+        for (let value of array)
+            if (value)
+                count++
+        return count
+
+    }
+    const array = [1, 2, 0, 9]
+
+
+
+    const movie = {
+        title: 'a',
+        releaseYear: 2018,
+        rating: 4.5,
+        director: 'b'
+    };
+    const showProperties = (obj) => {
+        for (let key in obj) {
+            if (typeof obj[key] === 'string') {
+                console.log(key, obj[key]);
+            }
+        }
+    };
+    // showProperties(movie);
+
+
+
+    const sum = (limit) => {
+
+        let sum = 0
+
+        for (let i = 0; i <= limit; i++)
+            if (i % 3 === 0 || i % 5 === 0)
+                sum += i
+
+        return sum
+
+    }
+    // console.log(sum(10))
+
+
+
+
+
+    const marks = [90, 90, 70];
+    // Avarage = 70;
+
+    // 0-59: F
+    // 60-69: D
+    // 70-79: C
+    // 80-89: B
+    // 90-100: A
+
+    const calculateAvarage = (array) => {
+        let sum = 0;
+        for (let value of array) {
+            sum += value;
+        }
+        return sum / array.length;
+    }
+
+    const calculateGrade = (marks) => {
+        const avarage = calculateAvarage(marks);
+
+        if (avarage < 60) return 'F';
+        if (avarage < 70) return 'D';
+        if (avarage < 80) return 'C';
+        if (avarage < 90) return 'B';
+        return 'A';
+    };
+    // console.log(calculateGrade(marks));
+
+
+
+    const showStarsMy = (rows) => {
+        let star = '*';
+
+        for (let i = 0; i < rows; i++) {
+            console.log(star);
+            star += '*';
+        }
+    };
+    // showStarsMy(2);
+
+    const showStars = (rows) => {
+        for (let row = 1; row <= rows; row++) {
+            let pattern = '';
+            for (let i = 0; i < row; i++)
+                pattern += '*';
+            console.log(pattern);
+        }
+    };
+    // showStars(2);
+
+    const isPrime = (num) => {
+        for (let factor = 2; factor < num; factor++)
+            if (num % factor === 0)
+                return false
+
+        return true
+    }
+
+    const showPrimes = (limit) => {
+        for (let num = 2; num <= limit; num++)
+            if (isPrime(num)) console.log(num)
+    }
+    showPrimes(10)
+
+
+    </script>
+
+</body>
+</html>
