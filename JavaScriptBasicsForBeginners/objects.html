@@ -11,6 +11,12 @@
     <script>
     'use strict';
 
+    console.info("%c%s", "font-weight: bold",'Object');
+    // Object
+
+    let x = {};
+    // let x = new Object();
+
     const circle = {
         radius: 1,
         location: {
@@ -22,7 +28,21 @@
             console.log('draw');
         }
     };
+    console.log('Circle:', circle);
 
+    circle.color = 'yelow';
+    circle.shade = () => {
+        console.log('shade');
+    };
+    console.log('Add to the object:', circle);
+
+    delete circle.radius;
+    delete circle.shade;
+    console.log('Delete from the object', circle);
+
+
+
+    console.info("%c%s", "font-weight: bold",'\nFactory function');
     // Factory function
     const createCircle = (radius) => {
         return {
@@ -32,13 +52,29 @@
             }
         }
     };
+    const circle_viaFactory_1 = createCircle(1);
+    const circle_viaFactory_2 = createCircle(2);
+    console.log('circle_viaFactory_1', circle_viaFactory_1);
+    console.log('circle_viaFactory_2', circle_viaFactory_2);
 
-    const circle_1 = createCircle(1);
-    console.log(circle_1);
 
-    const circle_2 = createCircle(2);
-    console.log(circle_2);
+    console.info("%c%s", "font-weight: bold",'\nConstructor function');
+    // Constructor function
+    function Circle(radius) {
+        this.radius = radius;
+        this.draw = () => {
+            console.log('draw');
+        };
+    }
+    const circle_viaConstructor_1 = new Circle(1);
+    const circle_viaConstructor_2 = new Circle(2);
+    console.log('circle_viaConstructor_1', circle_viaConstructor_1);
+    console.log('circle_viaConstructor_2', circle_viaConstructor_2);
 
+
+    // QUESTION:
+    // .call
+    // .applay
 
     </script>
 
