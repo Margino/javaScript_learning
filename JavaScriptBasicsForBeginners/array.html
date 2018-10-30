@@ -26,6 +26,17 @@
         numbers.splice(2, 0, 2.1, 2.2);
         console.log('splice', numbers);
 
+        // finding elements
+        console.info("%c%s", "font-weight: bold",'\nFinding elements');
+
+        const numbers2 = [1, 2, 3, 1, 4];
+        console.log(numbers2);
+        console.log('a:', numbers2.indexOf('a'));
+        console.log('1:', numbers2.indexOf(1));
+        console.log('Last 1:', numbers2.lastIndexOf(1));
+
+        console.log('icludes 1:', numbers.includes(1));
+
     </script>
 
 </body>
