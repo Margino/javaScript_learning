@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays</title>
+</head>
+<body>
+
+    <script>
+        console.info("%c%s", "font-weight: bold",'\nAdding elements');
+        // Adding elements
+        const numbers = [3, 4];
+        console.log('Arr', numbers)
+
+        // end
+        numbers.push(5, 6);
+        console.log('push', numbers);
+
+        // beginning
+        numbers.unshift(1, 2);
+        console.log('unshift', numbers);
+
+        // middle
+        numbers.splice(2, 0, 2.1, 2.2);
+        console.log('splice', numbers);
+
+    </script>
+
+</body>
+</html>
