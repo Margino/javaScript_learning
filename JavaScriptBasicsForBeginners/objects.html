@@ -40,9 +40,33 @@
     delete circle.shade;
     console.log('Delete from the object', circle);
 
+    // it doesn't work!?
+    // if ('radius' in circle) {
+    //     console.log('Radius in cricle');
+    // }
+
+    // Clone an object
+    console.info("%c%s", "font-weight: bold",'\nClone an object');
+
+    const anotherCircle = {};
+    for (let key in circle) {
+        anotherCircle[key] = circle[key];
+    }
+    console.log('anotherCircle', anotherCircle);
+
+    const anotherCircle2 = Object.assign({
+        color: 'yellow'
+    }, circle);
+    console.log('anotherCircle2', anotherCircle2);
+
+    // spred operator
+    const anotherCircle3 = {...circle};
+    console.log('anotherCircle3', anotherCircle3);
+
 
 
     console.info("%c%s", "font-weight: bold",'\nFactory function');
+
     // Factory function
     const createCircle = (radius) => {
         return {
@@ -59,6 +83,7 @@
 
 
     console.info("%c%s", "font-weight: bold",'\nConstructor function');
+
     // Constructor function
     function Circle(radius) {
         this.radius = radius;
@@ -97,6 +122,131 @@
     const bound = addToThis.bind(obj);
     const resultOfBind = bound(1, 2, 3)
     console.log('resultOfBind', resultOfBind);
+
+
+    // exercises
+    console.info("%c%s", "font-weight: bold",'\nexercises');
+
+    // address object
+    const address = {
+        street: 'Stepanovka',
+        city: 'New York',
+        zipCode: 893029
+    };
+    const showAdreess = (obj) => {
+        for (let key in obj) {
+            console.log(`${key}: ${obj[key]}`);
+        }
+    };
+    console.log(`1) Address object`);
+    showAdreess(address);
+
+    // a factory and a constructor function
+    const address2 = {
+        street: 'a',
+        city: 'b',
+        zipCode: 'c'
+    };
+
+    const creatAddress2byFunction = (street, city, zipCode) => {
+        return {
+            street,
+            city,
+            zipCode
+        };
+    };
+    console.log('creatAddress2byFunction', creatAddress2byFunction('a','b','c'));
+
+    function CreateAddress2byConstructor(street, city, zipCode) {
+        this.street = street;
+        this.city = city;
+        this.zipCode = zipCode;
+    }
+    const Address2byConstructor = new CreateAddress2byConstructor('a','b','c');
+    console.log('Address2byConstructor', Address2byConstructor);
+
+    // object equality
+    function Adress(street, city, zipCode) {
+        this.street = street;
+        this.city = city;
+        this.zipCode = zipCode;
+    }
+
+    let address4 = new Adress('a', 'b', 'c');
+    let address5 = new Adress('a', 'b', 'c');
+    const address6 = address4;
+
+    const areEqual = (address1, address2) => {
+        return address1.street === address2.street &&
+               address1.city === address2.city &&
+               address1.zipCode === address2.zipCode;
+    };
+    console.log('2)', areEqual(address4,address5));
+
+    const areSame = (address1, address2) => {
+        return address1 === address2;
+    };
+
+    console.log(areSame(address4,address5));
+    console.log(areSame(address4,address6));
+
+    const post = {
+        title: 'a',
+        body: 'b',
+        author: 'c',
+        views: 10,
+        comments: [
+            {
+                author: 'dd',
+                body: 'cd'
+            },
+            {
+                author: 'dc',
+                body: 'cc'
+            }
+        ],
+        isLive: true
+    };
+    console.log('3)', post);
+
+    function Post(title, body, author) {
+        this.title;
+        this.body;
+        this.author;
+        this.views = 0;
+        this.comments = [];
+        this.isLive = false;
+    }
+
+    const post2 = new Post('a','b','c');
+    console.log(post2);
+
+
+    const priceRanges = [
+        {
+            lagel: '$',
+            tooltip: 'Inexpensive',
+            minPerPerson: 0,
+            maxPerPerson: 10
+        },
+        {
+            lagel: '$',
+            tooltip: 'Moderate',
+            minPerPerson: 11,
+            maxPerPerson: 20
+        },
+        {
+            lagel: '$',
+            tooltip: 'Expensive',
+            minPerPerson: 21,
+            maxPerPerson: 50
+        }
+    ];
+    const restaurants = [
+        {
+            avaragePerPerson: 5
+        }    
+    ];
 
     </script>
 
