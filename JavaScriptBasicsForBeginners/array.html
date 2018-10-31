@@ -37,6 +37,27 @@
 
         console.log('icludes 1:', numbers.includes(1));
 
+        const courses = [
+            {
+                id: 1,
+                name: 'a'
+            },
+            {
+                id: 2,
+                name: 'b'
+            }
+        ];
+
+        const course = courses.find((course) => {
+            return course.name === 'a';
+        });
+        console.log('course', course);
+
+        const indexCourse = courses.findIndex((course) => {
+            return course.name === 'b';
+        });
+        console.log('indexCourse', indexCourse);
+
     </script>
 
 </body>
