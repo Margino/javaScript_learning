@@ -80,8 +80,8 @@
         console.log('any', anyNumbers3);
         console.log('numbers3', numbers3);
 
-        // emptying elements
-        console.info("%c%s", "font-weight: bold",'\nEmptyng elements');
+        // emptying array
+        console.info("%c%s", "font-weight: bold",'\nEmptyng array');
 
         let numbers5 = [1, 2, 3, 4];
         // 1
@@ -101,6 +101,18 @@
         //     numbers5.pop();
 
         console.log('numbers5', numbers5);
+
+
+        // combining array
+        console.info("%c%s", "font-weight: bold",'\nCombining array');
+
+        const first = [1, 2, 3];
+        const second = [4, 5, 6];
+        const combined = first.concat(second);
+        console.log('combined', combined);
+
+        const slice = combined.slice(2, 4);
+        console.log('slice', slice);
 
 
     </script>
