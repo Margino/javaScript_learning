@@ -121,6 +121,18 @@
         console.log('spread2', spread2);
 
 
+        // iterating array
+        console.info("%c%s", "font-weight: bold",'\nIterating array');
+        const numbers6 = [1, 2, 3, 5];
+
+        for (let number of numbers6) {
+            console.log('for', number)
+        }
+
+        numbers6.forEach((number, index) => {
+            console.log('forEach', number, index)
+        });
+
     </script>
 
 </body>
