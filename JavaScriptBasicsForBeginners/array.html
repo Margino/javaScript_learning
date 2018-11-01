@@ -181,6 +181,21 @@
         console.log('sortCourses3', sortCourses3);
 
 
+        // every & some
+        console.info("%c%s", "font-weight: bold",'\nEvery and some');
+
+        const numbers8 = [1, 2, -4, 5, 9];
+        const allPositive = numbers8.every((value) => {
+            return value >=0;
+        });
+        console.log('allPositive', allPositive);
+
+        const atLeatOnePositive = numbers8.some((value) => {
+            return value >= 0;
+        });
+        console.log('atLeatOnePositive', atLeatOnePositive);
+
+
 
     </script>
 
