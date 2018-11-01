@@ -145,6 +145,42 @@
         const joinString = splitString.join('-');
         console.log('joinString', joinString);
 
+        // sorting array
+        console.info("%c%s", "font-weight: bold",'\nSorting array');
+
+        const numbers7 = [12, 11, 5, 2, 9];
+        console.log('numbers7', numbers7);
+        const sortedNumbers7 = numbers7;
+        sortedNumbers7.sort();
+        console.log('sortedNumbers7', sortedNumbers7);
+        const reverseNumbers7 = numbers7;
+        reverseNumbers7.reverse();
+        console.log('reverseNumbers7', reverseNumbers7);
+
+        const courses2 = [
+            {'id': 1, 'name': 'Node.js'},
+            {'id': 1, 'name': 'javaScript'}
+        ];
+        console.log('courses2', courses2);
+
+        const sortCourses3 = courses2;
+
+        sortCourses3.sort((a, b) => {
+            // a < b = -1
+            // a > b = 1
+            // a = b = 0
+
+            const nameA = a.name.toLowerCase();
+            const nameB = b.name.toLowerCase();
+
+            if (nameA < nameB) return -1;
+            if (nameA > nameB) return 1;
+            return 0;
+        });
+
+        console.log('sortCourses3', sortCourses3);
+
+
 
     </script>
 
