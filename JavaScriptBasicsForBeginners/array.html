@@ -213,6 +213,26 @@
         });
         console.log(itmes);
 
+        // reducing array
+        console.info("%c%s", "font-weight: bold",'\nReducing array');
+
+        const numbers10 = [1, -1, 2, 3];
+        // a = 0, c = 1 => a = 1
+        // a = 1, c = -1 => a = 0
+        // a = 0, c = 2 => a = 2
+        // a = 0, c = 3 => a = 5
+
+        const sum10 = numbers10.reduce((accumulator, currentValue) => {
+            return accumulator + currentValue;
+        }, 0);
+        console.log('numbers', numbers10);
+        console.log('sum', sum10);
+
+        
+
+
+
+
 
 
     </script>
