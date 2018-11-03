@@ -41,6 +41,31 @@
         }
         console.log(interest(10000));
 
+        // getter & setter
+        const person = {
+            firstName: 'Alex',
+            lastName: 'Ivanov',
+            fullName() {
+                return `${person.firstName} ${person.lastName}`;
+            }
+        };
+        console.log('person.fullName', person.fullName());
+
+        const person2 = {
+            firstName: 'Alex',
+            lastName: 'Ivanov',
+            get fullName() {
+                return `${person.firstName} ${person.lastName}`;
+            },
+            set fullName(value) {
+                const parts = value.split(' ');
+                this.firstName = parts[0];
+                this.lastName = parts[1];
+            }
+        };
+        person2.fullName = 'John Smith';
+        console.log('getter:', person2);
+
 
     </script>
 
