@@ -17,7 +17,23 @@
             }
             return total;
         }
-        console.log('arguments', sum(1,2,3,4,5,10));
+        console.log('arguments:', sum(1,2,3,4,5,10));
+
+        // rest operator
+        function sum2(...args) {
+            return args.reduce((accumulator, currentValue) => {
+                return accumulator + currentValue;
+            });
+        }
+        console.log('rest operator:', sum(1,2,3,4,5,10));
+
+        function sumOfPurchase(discount, ...prices) {
+            const total = prices.reduce((accumulator, currentValue) => {
+                return accumulator + currentValue;
+            });
+            return total * (1 - discount);
+        }
+        console.log('sumOfPurchase', sumOfPurchase(0.1, 20, 30));
 
     </script>
 
