@@ -35,6 +35,13 @@
         }
         console.log('sumOfPurchase', sumOfPurchase(0.1, 20, 30));
 
+        // default parameters
+        function interest(principal, rate = 3.5, year = 5) {
+            return principal * rate / 100 * year;
+        }
+        console.log(interest(10000));
+
+
     </script>
 
 </body>
