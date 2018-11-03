@@ -228,11 +228,138 @@
         console.log('numbers', numbers10);
         console.log('sum', sum10);
 
-        
+        // exercises
+        console.info("%c%s", "font-weight: bold",'\nExercisis array');
 
+        const numbersEx1 = arrayFromRange(-10, -4);
+        console.log(numbersEx1);
 
+        function arrayFromRange(min, max) {
+            const arr = [];
+            for (let i = min; i <= max; i++) {
+                arr.push(i);
+            }
+            return arr;
+        }
 
+        const numbersEx2 = [1, 2, 3, 4];
+        console.log(numbersEx2.includes(6));
+        function includes(array, searchElement) {
+            return array.some(el => el === searchElement);
+        }
 
+        const numbersEx3 = [1, 2, 3, 4, 1];
+        const outputEx3 = expect(numbersEx3, [1,2]);
+        console.log('3) numbers', numbersEx3);
+        console.log('output', outputEx3);
+
+        function expect(array1, array2) {
+            const newArray = [];
+            for (let element of array1) {
+                if (!array2.includes(element)) {
+                    newArray.push(element)
+                }
+            }
+            return newArray;
+        }
+
+        const numbersEx4 = [1, 2, 3, 4];
+        console.log('4) numbers', numbersEx4);
+        const outputEx4 = move(numbersEx4, 0, 4);
+        console.log('output', outputEx4);
+
+        function move(array, index, offset) {
+            const position = index + offset;
+            if (position >= array.length || position < 0) {
+                console.error('Invalid offset');
+                return;
+            }
+            const output = [...array];
+            const element = output.splice(index, 1)[0];
+            output.splice(index + offset, 0, element);
+            return output;
+        }
+
+        const numbersEx5 = [1, 2, 3, 4, 1];
+        const count = coutOccurrences(numbersEx5, 1);
+        console.log('5)',count);
+
+        function coutOccurrences(array, searchElement) {
+            // let count = 0;
+            // for (let element of array) {
+            //     if (element === searchElement) {
+            //         count++;
+            //     }
+            // }
+            // return count;
+
+            return array.reduce((accumulator, currentValue) => {
+                const occurence = (currentValue === searchElement) ? 1 : 0;
+                return accumulator + occurence;
+            }, 0);
+        }
+
+        const numbersEx6 = [1, 8, 3, 4];
+        const max = getMax(numbersEx6);
+        console.log('6) getMax', max);
+
+        function getMax(array) {
+            if (array.length === 0) return undefined;
+
+            // solution 1
+            // array.sort((a, b) => {
+            //     if (a < b) return -1;
+            //     if (a > b) return 1;
+            //     return 0;
+            // });
+            // return array.reverse()[0];
+
+            // solution 2
+            // let max = 0;
+            // for (let element of array) {
+            //     if (element > max) {
+            //         max = element;
+            //     }
+            // }
+            // return max;
+
+            // solution 3
+            return array.reduce((accumulator, currentValue) => {
+                // solution 1
+                // if (currentValue > accumulator) return currentValue;
+                // return accumulator;
+
+                // solution
+                return (currentValue > accumulator) ? currentValue : accumulator;
+
+            });
+        }
+
+        const movies = [
+            {title: 'a', year: 2018, rating: 4.5},
+            {title: 'b', year: 2018, rating: 4.7},
+            {title: 'c', year: 2018, rating: 3},
+            {title: 'd', year: 2017, rating: 4.5}
+        ];
+        console.log(showMovie(movies, 2018));
+
+        function showMovie(array, year) {
+            const titles = array
+                .filter((movie) => {
+                    return (movie.year === year && movie.rating > 4);
+                })
+                .sort((a, b) => {
+                    if (a.rating < b.rating) return -1;
+                    if (a.rating > b.rating) return 1;
+                    return 0;
+                })
+                .reverse()
+                .map((array) => {
+                    return array.title;
+                });
+
+            return titles;
+        }
 
 
     </script>
