@@ -1,5 +1,9 @@
+// const revString = (str) => {
+//     return str.split('').reverse().join('');
+// };
+
 const revString = (str) => {
-    return str.split('').reverse().join('');
+    return [...str].reverse().join('');
 };
 
 console.log(revString('car'));
