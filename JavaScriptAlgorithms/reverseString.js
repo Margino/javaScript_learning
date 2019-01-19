@@ -6,12 +6,20 @@
 //     return [...str].reverse().join('');
 // };
 
+// const revString = (str) => {
+//     let reverseString = '';
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         reverseString += str[i];
+//     }
+//     return reverseString;
+// };
+
 const revString = (str) => {
     let reverseString = '';
-    for (let i = str.length - 1; i >= 0; i--) {
-        reverseString += str[i];
+    for (let char of str) {
+        reverseString = char + reverseString;
     }
-    return reverseString;
+    return(reverseString);
 };
 
 console.log(revString('car'));
