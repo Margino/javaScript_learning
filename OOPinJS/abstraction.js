@@ -1,11 +1,13 @@
 function Circle(radius) {
     this.radius = radius;
-    this.defaultLocation = { x: 0, y: 0 };
-    this.compliteOptimunLocation = function() {
+    let defaultLocation = { x: 0, y: 0 };
+    let compliteOptimunLocation = function() {
         // some code here
     };
     this.draw = function() {
-        this.compliteOptimunLocation();
+        compliteOptimunLocation(0.1);
+        // defaultLocation
+        // this.radius
         console.log(draw);
     };
 }
