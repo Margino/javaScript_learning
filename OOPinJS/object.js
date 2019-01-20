@@ -7,8 +7,6 @@ function creatCircle(radius) {
         }
     };
 }
-const circle = creatCircle(1);
-console.log(circle);
 
 // constructor function
 function Circle(radius) {
@@ -17,5 +15,14 @@ function Circle(radius) {
         console.log('draw');
     };
 }
-const circle2 = new Circle(1);
-console.log(circle2);
+const circle       = new Circle(1);
+const propertyName = 'location';
+
+circle.location = {x: 1};
+console.log(circle);
+
+circle[propertyName] = {y: 2};
+console.log(circle);
+
+delete circle.location;
+console.log(circle);
