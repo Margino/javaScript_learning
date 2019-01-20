@@ -26,3 +26,11 @@ console.log(circle);
 
 delete circle.location;
 console.log(circle);
+
+for (let key in circle) {
+    console.log(key, circle[key]);
+}
+
+if ('radius' in circle) {
+    console.log('Circle has a radius');
+}
