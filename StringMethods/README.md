@@ -14,7 +14,6 @@ const newStr = str.charAt(0); // H
 const str = "Hello World!";
 const newStr = str.charCodeAt(0); // 72
 ```
----
 
 
 ## Finding
@@ -57,7 +56,6 @@ const newStr = str.startsWith("Hello"); // true
 const str = "Hello World!";
 const newStr = str.endsWith("World!"); // true
 ```
----
 
 
 ## Extracting
@@ -84,7 +82,6 @@ const newStr = str.substr(1, 2); // el
 const str = "Hello World!";
 const newStr = str.substring(1, 2); // e
 ```
----
 
 
 ## Converting
@@ -130,7 +127,6 @@ const str = "Hello World!";
 const newStr = str.repeat(2); //Hello World!Hello World!
 
 ```
----
 
 
 ## Regular Expressions
