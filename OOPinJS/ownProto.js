@@ -1,0 +1,24 @@
+function Shape() {
+
+}
+
+Shape.prototype.duplicate = function() {
+    console.log('duplicate');
+}
+
+
+function Circle(radius) {
+    this.radius = radius;
+}
+
+Circle.prototype = Object.create(Shape.prototype);
+
+Circle.prototype.draw = function() {
+    console.log('draw');
+}
+
+const circle = new Circle(1);
+
+for(let key in circle) {
+    console.log(key);
+}
