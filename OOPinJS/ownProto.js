@@ -6,21 +6,35 @@ Shape.prototype.duplicate = function() {
     console.log('duplicate');
 }
 
+function extend(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+}
 
 function Circle(radius, color) {
     Shape.call(this, color)
     this.radius = radius;
 }
 
-Circle.prototype = Object.create(Shape.prototype);
-Circle.prototype.constructor = Circle;
+
+extend(Circle, Shape);
 
 Circle.prototype.draw = function() {
     console.log('draw');
 }
 
+function Square(size) {
+    this.size = size;
+}
+
+extend(Square, Shape);
+
 const circle = new Circle(1, 'red');
+const square = new Square(2)
 
 for(let key in circle) {
     console.log(key, circle[key]);
+}
+for(let key in square) {
+    console.log(key, square[key]);
 }
