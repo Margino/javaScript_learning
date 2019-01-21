@@ -1,19 +1,26 @@
+'use strict';
+
 function Circle(radius) {
+    // Instance members
     this.radius = radius;
     this.move = function() {
         console.log('move');
-        // this.draw();
     }
 }
 
+const circle1 = new Circle(1);
+
+// Prototype members
 Circle.prototype.draw = function() {
     console.log('Draw');
-    this.move();
 }
 
-const circle1 = new Circle(1);
-const circle2 = new Circle(2);
+// Returns instance members
+console.log(Object.keys(circle1));
 
-console.log(circle1);
-console.log(circle2,);
-circle2.draw();
+// Returns all members
+for (let key in circle1) {
+    console.log(key);
+}
+console.log('Move:', circle1.hasOwnProperty('move'));
+console.log('Draw:', circle1.hasOwnProperty('draw'));
