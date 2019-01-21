@@ -20,7 +20,7 @@ function Circle(radius, color) {
 extend(Circle, Shape);
 
 Circle.prototype.duplicate = function() {
-    Shape.prototype.duplicate.call(this);
+    // Shape.prototype.duplicate.call(this);
     console.log('duplicate circle');
 }
 
@@ -31,16 +31,27 @@ Circle.prototype.draw = function() {
 function Square(size) {
     this.size = size;
 }
-
 extend(Square, Shape);
+Square.prototype.duplicate = function() {
+    console.log('duplicate square');
+}
 
 const circle = new Circle(1, 'red');
 const square = new Square(2)
 
-for(let key in circle) {
-    console.log(key, circle[key]);
-}
-for(let key in square) {
-    console.log(key, square[key]);
-}
-circle.duplicate();
+// for(let key in circle) {
+//     console.log(key, circle[key]);
+// }
+// circle.duplicate();
+
+// for(let key in square) {
+//     console.log(key, square[key]);
+// }
+
+const shapes = [
+    new Circle(),
+    new Square()
+]
+
+for (let shape of shapes)
+    shape.duplicate()
