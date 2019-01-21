@@ -19,6 +19,11 @@ function Circle(radius, color) {
 
 extend(Circle, Shape);
 
+Circle.prototype.duplicate = function() {
+    Shape.prototype.duplicate.call(this);
+    console.log('duplicate circle');
+}
+
 Circle.prototype.draw = function() {
     console.log('draw');
 }
@@ -38,3 +43,4 @@ for(let key in circle) {
 for(let key in square) {
     console.log(key, square[key]);
 }
+circle.duplicate();
