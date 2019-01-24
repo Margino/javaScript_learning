@@ -1,3 +1,25 @@
+// when not to use an arrow function
+
+// 1. need the this keyword
+// box.addEventListener('click', function()...
+
+// 2. need a method to bind to an object
+// const person = {
+//                  age: 23,
+//                  score() {
+//                  ...
+
+// 3. need to add a prototype method
+// class Car {
+//      constructor(model, year) {
+//      ...
+// Car.prototype.summ = function () {
+//      return `This ${this.model}...
+
+// 4. need arguments object
+// const orderChildren = function () => {
+//  const children = Array.from(arguments);
+
 const race = '100m Dash';
 const winners = ['Imma Joe', 'John Born', 'Ann Sigle'];
 
