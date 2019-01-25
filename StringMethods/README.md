@@ -128,6 +128,20 @@ const newStr = str.repeat(2); //Hello World!Hello World!
 
 ```
 
+```
+const mark  = 'BMW';
+const model = 'x3';
+function addPaddingLeft(str, length = 10) {
+    return `${'.'.repeat(length - str.length)}${str}`;
+}
+padLeft(mark);
+padLeft(model);
+
+Output:
+.......BMW
+........x3
+```
+
 
 ## Regular Expressions
 
