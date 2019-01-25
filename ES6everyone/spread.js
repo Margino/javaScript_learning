@@ -10,5 +10,18 @@ const id = 632429;
 const commentIndex = comments.findIndex(comment => comment.id === id);
 const newComments = [ ...comments.slice(0, commentIndex),
                       ...comments.slice(commentIndex + 1) ];
+// console.log(newComments);
 
-console.log(newComments);
+
+
+const people = ['John', 'Ivan', 'Shive'];
+const newPeople = ['Lee', 'Smith'];
+people.push(...newPeople);
+console.log(people);
+
+
+const name = ['John', 'Smith'];
+function sayHi(first, last) {
+    console.log(`Hi there ${first} ${last}`);
+}
+sayHi(...name);
