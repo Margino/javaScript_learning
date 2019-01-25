@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spread</title>
+</head>
+<body>
+
+    <div class="cars">
+        <p>Audi</p>
+        <p>BMW</p>
+        <p>Lada</p>
+    </div>
+
+<script>
+    const cars = Array.from(document.querySelectorAll('.cars > p'));
+    const carsArr = [...document.querySelectorAll('.cars > p')];
+    console.log(cars);
+    console.log(carsArr);
+</script>
+</body>
+</html>
