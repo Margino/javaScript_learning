@@ -12,12 +12,12 @@ const tweets = new Promise((resolve) => {
     }, 500);
 });
 
-// Promise
-//     .all([weather, tweets])
-//     .then(responses => {
-//         const [weatherInfo, tweetsInfo] = resposnes;
-//         console.log(weatherInfo, tweetsInfo);
-//     });
+Promise
+    .all([weather, tweets])
+    .then(responses => {
+        const [weatherInfo, tweetsInfo] = responses;
+        console.log(weatherInfo, tweetsInfo);
+    });
 
 const data = fetch('https://raw.githubusercontent.com/Margino/nodejs_learning/master/weather/playground/data1111.json');
 const streetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
