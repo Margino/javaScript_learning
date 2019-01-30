@@ -1,7 +1,9 @@
 export const apiKey = 123;
 // export default apiKey;
 
+const url = 'http://example.dot';
+
 const first  = 'John';
 const second = 'Smith';
 
-export { first, second as third };
+export { url, first, second as third };
